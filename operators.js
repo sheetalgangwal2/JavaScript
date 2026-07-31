@@ -33,7 +33,6 @@ console.log(a==b);         //false
 console.log(a===b);         //false
 
 
-
 //Logical operators
 
 console.log(true&&true);   //true
