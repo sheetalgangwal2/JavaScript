@@ -7,3 +7,28 @@ function greet(){
 }
 
 greet();
+
+
+
+function createCounter(){
+
+
+    let count = 0;
+
+    function increment(){
+        // console.log("i am increment function");
+        count++
+        return count;
+    }
+
+    //return increment();             //undefined
+    return increment;
+}
+
+// const count =createCounter();
+// count()
+
+const counter = createCounter();
+console.log(counter());
+console.log(counter());
+console.log(counter());
