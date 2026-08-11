@@ -19,7 +19,7 @@
 
 //mouseenter, click, dblclick, mouseleave
 
-const element = document.getElementById("first");
+// const element = document.getElementById("first");
 
 // element.addEventListener(`click`,()=>{                     //dblclick also
 //     element.textContent = "I am Sheetal Gangwal";
@@ -28,14 +28,14 @@ const element = document.getElementById("first");
 // })
 
 
-let a = {
-    greet:function(value){
-        console.log("hello", value);
-    }
-}
+// let a = {
+//     greet:function(value){
+//         console.log("hello", value);
+//     }
+// }
 
-a.greet(10);
-a.greet(20);
+// a.greet(10);
+// a.greet(20);
 
 
 
@@ -61,14 +61,25 @@ a.greet(20);
 // })
 
 
-const parent = document.getElementById("parent");
-console.log(parent.children);
 
-for(let child of parent.children){
-    console.log(child);
-    child.addEventListener(`click`, ()=>{
-        child.textContent = "I am clicked";
-        child.style.fontSize = "30px";
-      
-    })
+const parent = document.getElementById("parent");
+// console.log(parent.children);
+
+function handleClick(e){
+    e.target.textContent = "I am clicked";
+    parent.removeEventListener(`click`,handleClick);
 }
+
+parent.addEventListener(`click`,handleClick)
+
+
+
+
+// for(let child of parent.children){
+//     console.log(child);
+//     child.addEventListener(`click`, ()=>{
+//         child.textContent = "I am clicked";
+//         child.style.fontSize = "30px";
+      
+//     })
+// }
