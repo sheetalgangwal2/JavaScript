@@ -3,8 +3,13 @@
 
 //promise chaining
 
-fetch("https://api.github.com/users")
+fetch("https://api.github.com/sers")
 .then((response)=>{
+
+    console.log(response);
+    if(!response.ok){
+        throw new Error("data is not available in server");
+    }
     return response.json();                    //javascript object notation
 })
 
@@ -27,3 +32,8 @@ fetch("https://api.github.com/users")
     }
 
 })
+
+.catch((error)=>{
+    const parent= document.getElementById("first");
+    parent.textContent = error.message;
+}) 
